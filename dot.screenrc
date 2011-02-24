@@ -1,0 +1,20 @@
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+defbce "on"
+#term rxvt-256color
+
+autodetach on
+bell_msg "^G"
+#defkanji utf-8
+#defencoding utf-8
+#encoding utf-8 utf-8
+defscrollback 10000
+escape ^Jj
+startup_message off
+vbell off
+#caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+
+caption always "%0`%-w%{=b bw}%n %t%{-}%+w"
+
+bind 'U' eval "encoding utf8" "stuff 'export LANG=ja_JP.UTF-8\012'"
+bind 'E' eval "encoding euc"  "stuff 'export LANG=ja_JP.EUC-JP\012'"
