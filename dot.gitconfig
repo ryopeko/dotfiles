@@ -1,0 +1,13 @@
+[user]
+  name = Ryoichi SEKIGUCHI
+  email = ryopeko+free@gmail.com
+[color]
+  ui = auto
+[alias]
+  ci = commit
+  br = branch
+  co = checkout
+  s = status
+  di = diff
+[core]
+  excludesfile = /Users/user/.gitignore
