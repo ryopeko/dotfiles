@@ -4,17 +4,12 @@ compinit
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:/opt/local/bin:/opt/bin
 export LS_COLORS='di=35;34:ln=32:ex=35'
-
-HADOOP_HOME=/Users/user/Downloads/hadoop-0.20.2
-export PATH=$HADOOP_HOME/bin:$PATH
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+export PATH=$HOME/local/node/bin:$PATH
 
 alias ls='ls -G'
 alias l='ls -l'
 alias la='ls -la'
-alias emacs='/usr/local/bin/emacs-23.1.91'
 alias e='emacs'
-alias vim='/usr/local/bin/vim'
 alias vi='vim'
 alias g='git'
 alias r='rails'

@@ -13,3 +13,12 @@
 [submodule "dot.vim/bundle/vim-pathogen"]
 	path = dot.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "dot.vim/bundle/vim-haml"]
+	path = dot.vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml
+[submodule "dot.vim/bundle/vim-perl"]
+	path = dot.vim/bundle/vim-perl
+	url = https://github.com/petdance/vim-perl.git
+[submodule "dot.vim/bundle/vim-jade"]
+	path = dot.vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
