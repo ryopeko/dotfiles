@@ -18,6 +18,8 @@ alias cdu='cd ../'
 alias cduu='cd ../../'
 alias cduuu='cd ../../../'
 
+export EDITOR='vi'
+
 autoload -U colors; colors
 
 setopt prompt_subst
@@ -48,3 +50,5 @@ setopt share_history
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

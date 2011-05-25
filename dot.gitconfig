@@ -10,4 +10,4 @@
   s = status
   di = diff
 [core]
-  excludesfile = /Users/user/.gitignore
+	excludesfile = /Users/sekiguchi.ryoichi/.gitignore
