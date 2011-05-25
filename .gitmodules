@@ -22,3 +22,6 @@
 [submodule "dot.vim/bundle/vim-jade"]
 	path = dot.vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "dot.vim/bundle/unite"]
+	path = dot.vim/bundle/unite
+	url = https://github.com/Shougo/unite.vim
