@@ -14,9 +14,6 @@ alias vi='vim'
 alias g='git'
 alias r='rails'
 alias be='bundle exec'
-alias cdu='cd ../'
-alias cduu='cd ../../'
-alias cduuu='cd ../../../'
 
 export EDITOR='vi'
 
