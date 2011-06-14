@@ -1,6 +1,8 @@
 autoload -U compinit
 compinit
 
+bindkey -e
+
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:/opt/local/bin:/opt/bin
 export LS_COLORS='di=35;34:ln=32:ex=35'
