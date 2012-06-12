@@ -20,6 +20,8 @@ do
   eval $cmd
 done
 
+ln -snf $PWD/ryopeko.zsh ~/.oh-my-zsh/custom/ryopeko.zsh
+
 source ~/.zshrc
 
 cd $DOT_HOME/dot.vim/bundle/
