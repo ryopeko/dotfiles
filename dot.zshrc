@@ -6,7 +6,6 @@ bindkey -e
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:/opt/local/bin:/opt/bin
 export LS_COLORS='di=35;34:ln=32:ex=35'
-export PATH=$HOME/local/node/bin:$PATH
 
 alias ls='ls -G'
 alias l='ls -l'
