@@ -1,50 +1,37 @@
-autoload -U compinit
-compinit
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-bindkey -e
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="gnzh"
 
-export LANG=ja_JP.UTF-8
-export PATH=$PATH:/opt/local/bin:/opt/bin
-export LS_COLORS='di=35;34:ln=32:ex=35'
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls -G'
-alias l='ls -l'
-alias la='ls -la'
-alias vi='vim'
-alias g='git'
-alias r='rails'
-alias be='bundle exec'
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-export EDITOR='vi'
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-autoload -U colors; colors
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-setopt prompt_subst
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-PROMPT="%n%% "
-local RIGHTC=$'%{\e[1;31m%}'
-local LEFTC=$'%{\e[1;33m%}'
-local DEFAULTC=$'%{\e[m%}'
-PROMPT=$LEFTC"$ "$DEFAULTC
-export RPROMPT=$RIGHTC"[${HOST}%~]"$DEFAULTC
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-SPROMPT="correct: %R -> %r ? "
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git rvm gem ruby rails)
 
-setopt auto_pushd
 
-setopt pushd_ignore_dups
+source $ZSH/oh-my-zsh.sh
 
-setopt auto_menu
-
-setopt list_packed
-
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=50000
-SAVEHIST=50000
-setopt extended_history
-
-setopt share_history
-
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-
+# Customize to your needs...
