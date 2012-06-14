@@ -41,6 +41,8 @@ bindkey '^S' history-incremental-pattern-search-forward
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+source $HOME/perl5/perlbrew/etc/bashrc
+
 function chpwd() {
   ls
 }
