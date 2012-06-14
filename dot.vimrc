@@ -41,7 +41,7 @@ set t_Co=256
 colorscheme mrkn256
 
 """ unite.vim
-let g:unite_enable_start_insert=1
+""" let g:unite_enable_start_insert=1
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
