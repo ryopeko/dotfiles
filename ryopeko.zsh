@@ -5,6 +5,8 @@ bindkey -e
 
 export LANG=ja_JP.UTF-8
 export PATH=$PATH:/opt/local/bin:/opt/bin
+export PATH=/usr/local/git/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export LS_COLORS='di=35;34:ln=32:ex=35'
 
 alias ls='ls -G'

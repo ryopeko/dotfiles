@@ -33,5 +33,6 @@ plugins=(git rvm gem ruby rails)
 
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/ryopeko.zsh
 
 # Customize to your needs...
