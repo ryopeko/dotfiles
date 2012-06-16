@@ -12,6 +12,12 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-pathogen'
 Bundle 'petdance/vim-perl'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
+Bundle 'desert256.vim'
+Bundle 'wombat256.vim'
+
+let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
 syntax enable
 filetype indent on
@@ -38,7 +44,7 @@ map <RIGHT> <ESC>:bn<CR>
 set expandtab tabstop=2 shiftwidth=2
 
 set t_Co=256
-colorscheme mrkn256
+colorscheme wombat256mod
 
 """ unite.vim
 """ let g:unite_enable_start_insert=1
