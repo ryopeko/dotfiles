@@ -73,7 +73,15 @@ endf
 call s:HighlightSpaces()
 autocmd VimEnter,WinEnter * call s:HighlightSpaces()
 
-autocmd InsertLeave * setlocal nocursorline
-autocmd InsertEnter * setlocal cursorline
+""autocmd InsertLeave * setlocal nocursorline
+""autocmd InsertEnter * setlocal cursorline
 
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
 
+hi clear CursorLine
+hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
