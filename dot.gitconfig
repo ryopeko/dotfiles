@@ -9,5 +9,9 @@
   co = checkout
   s = status
   di = diff
+	ls = ls-files
 [core]
 	excludesfile = /Users/sekiguchi.ryoichi/.gitignore
+	editor = /usr/bin/vim
+[grep]
+	extendedRegexp = true
