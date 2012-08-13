@@ -16,6 +16,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'desert256.vim'
 Bundle 'wombat256.vim'
+Bundle 'molokai'
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
@@ -47,7 +48,7 @@ set t_Co=256
 colorscheme wombat256mod
 
 """ unite.vim
-""" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
@@ -78,10 +79,12 @@ autocmd VimEnter,WinEnter * call s:HighlightSpaces()
 
 augroup cch
   autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
+  autocmd WinLeave * set nocursorline nocursorcolumn
+  autocmd WinEnter,BufRead * set cursorline cursorcolumn
 augroup END
 
 hi clear CursorLine
+hi clear CursorColumn
 hi CursorLine gui=underline
+highlight CursorColumn ctermbg=blue guibg=black
 highlight CursorLine ctermbg=black guibg=black
