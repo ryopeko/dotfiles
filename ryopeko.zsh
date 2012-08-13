@@ -17,7 +17,7 @@ alias g='git'
 alias r='rails'
 alias be='bundle exec'
 
-export EDITOR='vi'
+export EDITOR='vim'
 
 autoload -U colors; colors
 
