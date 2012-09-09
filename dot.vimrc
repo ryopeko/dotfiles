@@ -1,28 +1,33 @@
-
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,cp932
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-pathogen'
-Bundle 'petdance/vim-perl'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimproc'
-Bundle 'desert256.vim'
-Bundle 'wombat256.vim'
-Bundle 'molokai'
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'wombat256.vim'
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
 syntax enable
 filetype indent on
 filetype plugin on
+
+if neobundle#exists_not_installed_bundles()
+ echomsg 'Not installed bundles : ' .
+       \ string(neobundle#get_not_installed_bundle_names())
+ echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
 
 set ambiwidth=double
 set autoindent
