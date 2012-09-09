@@ -51,6 +51,7 @@ colorscheme wombat256mod
 let g:unite_enable_start_insert=1
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,r :<C-u>Unite file_mru<CR>
 
 au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
