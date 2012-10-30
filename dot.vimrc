@@ -15,6 +15,9 @@ NeoBundle 'petdance/vim-perl'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'taka84u9/unite-git'
 NeoBundle 'wombat256.vim'
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
@@ -47,16 +50,36 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 map <LEFT> <ESC>:bp<CR>
 map <RIGHT> <ESC>:bn<CR>
 
-set expandtab tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.rb set nowrap tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.pl set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.pm set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.t  set nowrap tabstop=4 shiftwidth=4 expandtab
+"set expandtab tabstop=2 shiftwidth=2
+"set expandtab ts=4 sw=4 nowrap ft=perl ff=unix
 
 set t_Co=256
 colorscheme wombat256mod
+
+""" neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 """ unite.vim
 let g:unite_enable_start_insert=1
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,r :<C-u>Unite file_mru<CR>
+nnoremap <silent> ,g :<C-u>Unite git_modified<CR>
 
 au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
@@ -68,6 +91,7 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 au BufReadPost,BufNewFile *.t :setl filetype=perl
+au BufReadPost,BufNewFile *.psgi :setl filetype=perl
 
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
