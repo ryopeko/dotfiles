@@ -3,11 +3,9 @@
 DOT_HOME=$HOME/dotfiles
 
 cd $HOME
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 cd $DOT_HOME
-
-cp ryopeko.zsh ~/.oh-my-zsh/custom/
 
 dotfiles=(`find . -name "dot.*"`)
 
