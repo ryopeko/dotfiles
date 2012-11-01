@@ -26,6 +26,6 @@ source ~/.zshrc
 
 cd $DOT_HOME/dot.vim/bundle/
 
-git clone git://github.com/gmarik/vundle.git
+git clone https://github.com/Shougo/neobundle.vim
 
 cd $DOT_HOME
