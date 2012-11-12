@@ -16,6 +16,7 @@ alias vi='vim'
 alias g='git'
 alias r='rails'
 alias be='bundle exec'
+alias tm='tmux'
 
 export EDITOR='vim'
 
