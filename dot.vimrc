@@ -10,15 +10,17 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'petdance/vim-perl'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'taka84u9/unite-git'
-NeoBundle 'wombat256.vim'
+NeoBundle 'https://github.com/pangloss/vim-javascript'
+NeoBundle 'https://github.com/petdance/vim-perl'
+NeoBundle 'https://github.com/Shougo/unite.vim'
+NeoBundle 'https://github.com/Shougo/vimshell'
+NeoBundle 'https://github.com/Shougo/vimproc'
+NeoBundle 'https://github.com/Shougo/neocomplcache'
+NeoBundle 'https://github.com/Shougo/neosnippet'
+NeoBundle 'https://github.com/taka84u9/unite-git'
+NeoBundle 'https://github.com/Shougo/vimfiler.git'
+NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
+"NeoBundle 'wombat256.vim'
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
