@@ -52,10 +52,12 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 map <LEFT> <ESC>:bp<CR>
 map <RIGHT> <ESC>:bn<CR>
 
-au BufNewFile,BufRead *.rb set nowrap tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.pl set nowrap tabstop=4 shiftwidth=4 expandtab
-au BufNewFile,BufRead *.pm set nowrap tabstop=4 shiftwidth=4 expandtab
-au BufNewFile,BufRead *.t  set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.rb   set nowrap tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.sql  set nowrap tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.pl   set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.pm   set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.t    set nowrap tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.psgi set nowrap tabstop=4 shiftwidth=4 expandtab
 "set expandtab tabstop=2 shiftwidth=2
 "set expandtab ts=4 sw=4 nowrap ft=perl ff=unix
 
