@@ -100,6 +100,9 @@ au BufReadPost,BufNewFile *.psgi :setl filetype=perl
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
 
+""行末空白の自動削除
+autocmd BufWritePre * :%s/\s\+$//ge
+
 function! s:HighlightSpaces()
   syntax match WideSpace /　/ containedin=ALL
   syntax match EOLSpace /\s\+$/ containedin=ALL
