@@ -7,12 +7,14 @@ export LANG=ja_JP.UTF-8
 export PATH=$PATH:/opt/local/bin:/opt/bin
 export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+
 export LS_COLORS='di=35;34:ln=32:ex=35'
 
 alias ls='ls -G'
 alias l='ls -l'
 alias la='ls -la'
 alias vi='vim'
+alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim'
 alias g='git'
 alias r='rails'
 alias be='bundle exec'
@@ -40,7 +42,9 @@ setopt share_history
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export PATH="$HOME/.rbenv/bin:${HOME}/.rbenv/shims:${PATH}"
+eval "$(rbenv init -)"
 
 source $HOME/perl5/perlbrew/etc/bashrc
 

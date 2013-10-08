@@ -10,17 +10,22 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'https://github.com/pangloss/vim-javascript'
-NeoBundle 'https://github.com/petdance/vim-perl'
-NeoBundle 'https://github.com/Shougo/unite.vim'
-NeoBundle 'https://github.com/Shougo/vimshell'
-NeoBundle 'https://github.com/Shougo/vimproc'
-NeoBundle 'https://github.com/Shougo/neocomplcache'
-NeoBundle 'https://github.com/Shougo/neosnippet'
-NeoBundle 'https://github.com/taka84u9/unite-git'
-NeoBundle 'https://github.com/Shougo/vimfiler.git'
-NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
-"NeoBundle 'wombat256.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'petdance/vim-perl'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'roalddevries/yaml.vim'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'taka84u9/unite-git'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'wombat256.vim'
+NeoBundle "kana/vim-textobj-user"
+NeoBundle "osyo-manga/vim-textobj-multiblock"
 
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
@@ -44,6 +49,7 @@ set ruler
 set showmatch
 set hlsearch
 set noswapfile
+set ignorecase
 
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
@@ -52,17 +58,28 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 map <LEFT> <ESC>:bp<CR>
 map <RIGHT> <ESC>:bn<CR>
 
-au BufNewFile,BufRead *.rb   set nowrap tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.sql  set nowrap tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.pl   set nowrap tabstop=4 shiftwidth=4 expandtab
-au BufNewFile,BufRead *.pm   set nowrap tabstop=4 shiftwidth=4 expandtab
-au BufNewFile,BufRead *.t    set nowrap tabstop=4 shiftwidth=4 expandtab
+
+au BufNewFile,BufRead *.js     set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.json   set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.coffee set tabstop=2 shiftwidth=2 expandtab
+
+au BufNewFile,BufRead *.scss set tabstop=2 shiftwidth=2 expandtab
+
+au BufNewFile,BufRead Gemfile  set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.watchr set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.rb     set tabstop=2 shiftwidth=2 expandtab
+
+au BufNewFile,BufRead *.pl set tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.pm set tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.t  set tabstop=4 shiftwidth=4 expandtab
 au BufNewFile,BufRead *.psgi set nowrap tabstop=4 shiftwidth=4 expandtab
 "set expandtab tabstop=2 shiftwidth=2
 "set expandtab ts=4 sw=4 nowrap ft=perl ff=unix
 
+let g:Powerline_symbols = 'fancy'
 set t_Co=256
-colorscheme wombat256mod
+colorscheme wombat256
 
 """ neocomplcache
 let g:acp_enableAtStartup = 0
@@ -84,6 +101,7 @@ nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,r :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,g :<C-u>Unite git_modified<CR>
+nnoremap <silent> ,o :<C-u>Unite outline<CR>
 
 au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
@@ -94,13 +112,14 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
+au BufReadPost,BufNewFile Gemfile :setl filetype=ruby
+au BufReadPost,BufNewFile *.watchr  :setl filetype=ruby
 au BufReadPost,BufNewFile *.t :setl filetype=perl
 au BufReadPost,BufNewFile *.psgi :setl filetype=perl
 
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
 
-""行末空白の自動削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
 function! s:HighlightSpaces()
@@ -129,3 +148,13 @@ hi clear CursorColumn
 hi CursorLine gui=underline
 highlight CursorColumn ctermbg=blue guibg=black
 highlight CursorLine ctermbg=black guibg=black
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+omap ab <Plug>(textobj-multiblock-a)
+omap ib <Plug>(textobj-multiblock-i)
+vmap ab <Plug>(textobj-multiblock-a)
+vmap ib <Plug>(textobj-multiblock-i)
+
