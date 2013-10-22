@@ -17,7 +17,14 @@ NeoBundle 'roalddevries/yaml.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'taka84u9/unite-git'
@@ -26,8 +33,6 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'wombat256.vim'
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "osyo-manga/vim-textobj-multiblock"
-
-let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
 
 syntax enable
 filetype indent on
@@ -96,12 +101,17 @@ inoremap <expr><C-y> neocomplcache#close_popup()
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 """ unite.vim
-let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert = 1
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,r :<C-u>Unite file_mru<CR>
-nnoremap <silent> ,g :<C-u>Unite git_modified<CR>
 nnoremap <silent> ,o :<C-u>Unite outline<CR>
+nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> ,rg :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> ,gs :<C-u>Unite git_modified<CR>
 
 au FileType unite nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
