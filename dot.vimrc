@@ -33,6 +33,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'wombat256.vim'
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "osyo-manga/vim-textobj-multiblock"
+NeoBundle 'osyo-manga/vim-over'
 
 syntax enable
 filetype indent on
@@ -168,3 +169,4 @@ omap ib <Plug>(textobj-multiblock-i)
 vmap ab <Plug>(textobj-multiblock-a)
 vmap ib <Plug>(textobj-multiblock-i)
 
+nnoremap <silent> ,m :OverCommandLine<CR>%s/
