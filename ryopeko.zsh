@@ -19,6 +19,7 @@ alias g='git'
 alias r='rails'
 alias be='bundle exec'
 alias tm='tmux'
+alias gg='git grep -n'
 
 export EDITOR='vim'
 
