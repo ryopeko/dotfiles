@@ -16,10 +16,11 @@ alias la='ls -la'
 alias vi='vim'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim'
 alias g='git'
+alias gg='git grep'
 alias r='rails'
 alias be='bundle exec'
-alias tm='tmux'
 alias gg='git grep -n'
+alias tm='tmux -2'
 
 export EDITOR='vim'
 
@@ -52,3 +53,21 @@ source $HOME/perl5/perlbrew/etc/bashrc
 function chpwd() {
   ls
 }
+
+
+if [ -n "${TMUX}" ]; then
+  # 既存のシェルの SSH_AUTH_SOCK を更新
+  function update_ssh_auth_sock() {
+    NEWVAL=`tmux show-environment | grep "^SSH_AUTH_SOCK" | cut -d"=" -f2`
+    if [ -n "${NEWVAL}" ]; then
+      SSH_AUTH_SOCK=${NEWVAL}
+    fi
+    echo "reset ssh auth sock"
+  }
+
+  # widget 化する
+  zle -N update_ssh_auth_sock
+
+  # ショートカットキー割り当て
+  bindkey "^t" update_ssh_auth_sock
+fi
