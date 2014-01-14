@@ -12,6 +12,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'petdance/vim-perl'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'roalddevries/yaml.vim'
 NeoBundle 'digitaltoad/vim-jade'
