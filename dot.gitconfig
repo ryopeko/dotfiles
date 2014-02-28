@@ -10,6 +10,9 @@
   s = status
   di = diff
 	ls = ls-files
+	p = push
+	a = add
+	ap = add -p
 [core]
 	excludesfile = /Users/sekiguchi.ryoichi/.gitignore
 	editor = /usr/bin/vim
