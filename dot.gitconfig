@@ -15,3 +15,5 @@
 	editor = /usr/bin/vim
 [grep]
 	extendedRegexp = true
+[push]
+	default = upstream
