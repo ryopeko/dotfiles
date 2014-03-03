@@ -241,7 +241,22 @@ highlight CursorLine ctermbg=black guibg=black
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
+      \ 'component_function': {
+      \   'filename': 'FilepathString'
       \ }
+   \ }
+
+function! FilepathString()
+  if '' != expand('%:p')
+    if stridx(expand('%:p'), expand('~')) == 0
+      return substitute(expand('%:p'), expand('~'), '~', '')
+    else
+      return expand('%:p')
+    endif
+  else
+    return '[No Name]'
+  endif
+endfunction
 
 omap ab <Plug>(textobj-multiblock-a)
 omap ib <Plug>(textobj-multiblock-i)
