@@ -10,6 +10,8 @@ export PATH=/usr/local/bin:$PATH
 
 export LS_COLORS='di=35;34:ln=32:ex=35'
 
+export GOPATH=$HOME'/dev'
+
 alias ls='ls -G'
 alias l='ls -l'
 alias la='ls -la'
