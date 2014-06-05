@@ -4,13 +4,15 @@ compinit
 bindkey -e
 
 export LANG=ja_JP.UTF-8
-export PATH=$PATH:/opt/local/bin:/opt/bin
+
+export GOPATH=$HOME'/dev'
+
+export PATH=$PATH:/opt/local/bin:/opt/bin:$GOPATH/bin
 export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 export LS_COLORS='di=35;34:ln=32:ex=35'
 
-export GOPATH=$HOME'/dev'
 
 alias ls='ls -G'
 alias l='ls -l'
