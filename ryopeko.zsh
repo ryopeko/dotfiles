@@ -25,6 +25,7 @@ alias r='rails'
 alias be='bundle exec'
 alias gg='git grep -n'
 alias tm='tmux -2'
+alias perldoc="perldoc -M Pod::Text::Color::Delight"
 
 export EDITOR='vim'
 
