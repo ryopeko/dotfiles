@@ -88,3 +88,17 @@ function percol-src () {
 }
 zle -N percol-src
 bindkey '^S' percol-src
+
+function percol-github-isses () {
+    local pr=$(repo=`g config remote.origin.url |cut -d ":" -f 2 |sed -e s/\.git$//` | curl -s -H "Authorization: token $TOKEN" $GITHUB_API_ENDPOINT/repos/$repo/pulls |jq -r '.[] |"\(.html_url)\t\(.title)"' | percol --query "$LBUFFER"|cut -f 1)
+    if [ -n "$pr" ]; then
+        BUFFER="open ${pr}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N percol-github-isses
+bindkey '^G^I' percol-github-isses
+
+
+
