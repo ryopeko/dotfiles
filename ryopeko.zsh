@@ -26,6 +26,7 @@ alias be='bundle exec'
 alias gg='git grep -n'
 alias tm='tmux -2'
 alias perldoc="perldoc -M Pod::Text::Color::Delight"
+alias vo='vim $(git ls-files |percol)'
 
 export EDITOR='vim'
 
