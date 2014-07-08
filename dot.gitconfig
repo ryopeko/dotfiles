@@ -20,3 +20,6 @@
 	extendedRegexp = true
 [push]
 	default = upstream
+
+[ghq]
+  root = ~/dev/src
