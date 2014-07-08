@@ -27,7 +27,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'taka84u9/unite-git'
 NeoBundle 'h1mesuke/unite-outline'
