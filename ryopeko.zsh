@@ -26,7 +26,7 @@ alias be='bundle exec'
 alias gg='git grep -n'
 alias tm='tmux -2'
 alias perldoc="perldoc -M Pod::Text::Color::Delight"
-alias vo='vim $(git ls-files |percol)'
+alias vo='vim $(git ls-files |peco)'
 
 export EDITOR='vim'
 
@@ -49,7 +49,6 @@ setopt share_history
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
-
 
 export PATH="$HOME/.rbenv/bin:${HOME}/.rbenv/shims:${PATH}"
 eval "$(rbenv init -)"
@@ -79,30 +78,30 @@ if [ -n "${TMUX}" ]; then
 fi
 
 
-function percol-src () {
-    local selected_dir=$(ghq list --full-path | percol --query "$LBUFFER")
+function peco-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${selected_dir}"
         zle accept-line
     fi
     zle clear-screen
 }
-zle -N percol-src
-bindkey '^S' percol-src
+zle -N peco-src
+bindkey '^S' peco-src
 
-function percol-github-prs () {
-    local pr=$(repo=`g config remote.origin.url |cut -d ":" -f 2 |sed -e s/\.git$//` | curl -s -H "Authorization: token $TOKEN" $GITHUB_API_ENDPOINT/repos/$repo/pulls |jq -r '.[] |"\(.html_url)\t\(.title)"' | percol --query "$LBUFFER"|cut -f 1)
+function peco-github-prs () {
+    local pr=$(repo=`g config remote.origin.url |cut -d ":" -f 2 |sed -e s/\.git$//` | curl -s -H "Authorization: token $TOKEN" $GITHUB_API_ENDPOINT/repos/$repo/pulls |jq -r '.[] |"\(.html_url)\t\(.title)"' | peco --query "$LBUFFER"|cut -f 1)
     if [ -n "$pr" ]; then
         BUFFER="open ${pr}"
         zle accept-line
     fi
     zle clear-screen
 }
-zle -N percol-github-prs
-bindkey '^G^P' percol-github-prs
+zle -N peco-github-prs
+bindkey '^G^P' peco-github-prs
 
 function cdgem() {
-  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | percol | cut -d \  -f 1)
+  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
   if [ -n "$gem_name" ]; then
     local gem_dir=$(bundle show ${gem_name})
     echo "cd to ${gem_dir}"
