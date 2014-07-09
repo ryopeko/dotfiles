@@ -10,6 +10,7 @@ brew_packages=(
 zsh
 git
 hg
+tig
 tmux
 rbenv
 ruby-build
