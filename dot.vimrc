@@ -80,9 +80,12 @@ au BufNewFile,BufRead *.scss set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead Gemfile  set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.watchr set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.rb     set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.rake   set tabstop=2 shiftwidth=2 expandtab
 
 au BufNewFile,BufRead *.yaml set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.yml  set tabstop=2 shiftwidth=2 expandtab
+
+au BufNewFile,BufRead *.erb set tabstop=2 shiftwidth=2 expandtab
 
 au BufNewFile,BufRead *.pl set tabstop=4 shiftwidth=4 expandtab
 au BufNewFile,BufRead *.pm set tabstop=4 shiftwidth=4 expandtab
