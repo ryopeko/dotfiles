@@ -33,6 +33,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'taka84u9/unite-git'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'sorah/unite-ghq'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'wombat256.vim'
 NeoBundle "kana/vim-textobj-user"
@@ -192,6 +193,7 @@ nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,r :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,o :<C-u>Unite outline<CR>
+nnoremap <silent> ,q :<C-u>Unite ghq<CR>
 nnoremap <silent> ,g :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cog :<C-u>Unite grep: -buffer-name=search-buffer<CR><C-R><C-W>
