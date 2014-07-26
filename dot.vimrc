@@ -40,6 +40,7 @@ NeoBundle "kana/vim-textobj-user"
 NeoBundle "osyo-manga/vim-textobj-multiblock"
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'rking/ag.vim'
 
 syntax enable
 filetype indent on
