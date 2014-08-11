@@ -35,6 +35,7 @@ alfred
 slack
 dropbox
 bettertouchtool
+kobit
 )
 
 for package in ${brew_packages[@]} ; do
