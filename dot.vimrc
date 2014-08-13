@@ -36,8 +36,6 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'sorah/unite-ghq'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'wombat256.vim'
-NeoBundle "kana/vim-textobj-user"
-NeoBundle "osyo-manga/vim-textobj-multiblock"
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'rking/ag.vim'
