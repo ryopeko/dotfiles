@@ -36,6 +36,7 @@ slack
 dropbox
 bettertouchtool
 kobit
+evernote
 )
 
 for package in ${brew_packages[@]} ; do
