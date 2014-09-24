@@ -230,9 +230,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
-""autocmd InsertLeave * setlocal nocursorline
-""autocmd InsertEnter * setlocal cursorline
-
 augroup cch
   autocmd! cch
   autocmd WinLeave * set nocursorline nocursorcolumn
@@ -263,10 +260,5 @@ function! FilepathString()
     return '[No Name]'
   endif
 endfunction
-
-omap ab <Plug>(textobj-multiblock-a)
-omap ib <Plug>(textobj-multiblock-i)
-vmap ab <Plug>(textobj-multiblock-a)
-vmap ib <Plug>(textobj-multiblock-i)
 
 nnoremap <silent> ,m :OverCommandLine<CR>%s/
