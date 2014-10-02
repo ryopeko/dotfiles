@@ -10,6 +10,7 @@ export GOPATH=$HOME'/dev'
 export PATH=$PATH:/opt/local/bin:/opt/bin:$GOPATH/bin
 export PATH=/usr/local/git/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/heroku/bin:$PATH"
 
 export LS_COLORS='di=35;34:ln=32:ex=35'
 
