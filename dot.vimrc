@@ -8,7 +8,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'petdance/vim-perl'
@@ -49,6 +49,8 @@ if neobundle#exists_not_installed_bundles()
        \ string(neobundle#get_not_installed_bundle_names())
  echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
+
+call neobundle#end()
 
 set ambiwidth=double
 set autoindent
