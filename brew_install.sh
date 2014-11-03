@@ -21,6 +21,7 @@ jq
 wget
 tree
 redis
+imagemagick
 )
 
 cask_packages=(
