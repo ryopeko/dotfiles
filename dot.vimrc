@@ -92,6 +92,7 @@ au BufNewFile,BufRead *.erb set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.pl set tabstop=4 shiftwidth=4 expandtab
 au BufNewFile,BufRead *.pm set tabstop=4 shiftwidth=4 expandtab
 au BufNewFile,BufRead *.t  set tabstop=4 shiftwidth=4 expandtab
+au BufNewFile,BufRead *.tt  set tabstop=4 shiftwidth=4 expandtab
 au BufNewFile,BufRead *.psgi set nowrap tabstop=4 shiftwidth=4 expandtab
 "set expandtab tabstop=2 shiftwidth=2
 "set expandtab ts=4 sw=4 nowrap ft=perl ff=unix
@@ -213,6 +214,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 au BufReadPost,BufNewFile Gemfile :setl filetype=ruby
 au BufReadPost,BufNewFile *.watchr  :setl filetype=ruby
 au BufReadPost,BufNewFile *.t :setl filetype=perl
+au BufReadPost,BufNewFile *.tt :setl filetype=html
 au BufReadPost,BufNewFile *.psgi :setl filetype=perl
 
 highlight WideSpace ctermbg=blue guibg=blue
