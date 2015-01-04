@@ -80,6 +80,7 @@ au BufNewFile,BufRead *.coffee set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.scss set tabstop=2 shiftwidth=2 expandtab
 
 au BufNewFile,BufRead Gemfile  set tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead Guardfile set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.watchr set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.rb     set tabstop=2 shiftwidth=2 expandtab
 au BufNewFile,BufRead *.rake   set tabstop=2 shiftwidth=2 expandtab
@@ -212,6 +213,7 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 au BufReadPost,BufNewFile Gemfile :setl filetype=ruby
+au BufReadPost,BufNewFile Guardfile :setl filetype=ruby
 au BufReadPost,BufNewFile *.watchr  :setl filetype=ruby
 au BufReadPost,BufNewFile *.t :setl filetype=perl
 au BufReadPost,BufNewFile *.tt :setl filetype=html
