@@ -29,6 +29,7 @@ iterm2
 keyremap4macbook
 google-chrome
 google-japanese-ime
+chromium
 firefox
 limechat
 istat-menus
