@@ -12,8 +12,6 @@ git
 hg
 tig
 tmux
-rbenv
-ruby-build
 go
 peco
 ag
