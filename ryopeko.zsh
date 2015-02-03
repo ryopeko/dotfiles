@@ -1,4 +1,4 @@
-autoload -U compinit
+autoload -U compinit chpwd_recent_dirs cdr
 compinit
 
 bindkey -e
