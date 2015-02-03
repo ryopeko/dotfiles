@@ -28,6 +28,7 @@ alias gg='git grep -n'
 alias tm='tmux -2'
 alias perldoc="perldoc -M Pod::Text::Color::Delight"
 alias vo='vim $(git ls-files |peco)'
+alias pc='perl -c $@'
 
 export EDITOR='vim'
 
