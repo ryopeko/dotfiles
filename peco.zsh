@@ -29,4 +29,14 @@ function cdgem() {
   fi
 }
 
-
+function pgco() {
+  local branch=$(git branch -a | peco | tr -d ' ')
+  if [ -n "$branch" ]; then
+    if [[ "$branch" =~ "remotes/" ]]; then
+      local b=$(echo $branch | awk -F '/' '{print $3}')
+      git checkout -b $b $branch
+    else
+      git checkout $branch
+    fi
+  fi
+}
