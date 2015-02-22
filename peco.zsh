@@ -40,3 +40,10 @@ function pgco() {
     fi
   fi
 }
+
+function pcd() {
+  local directory=$(d |cut -f 2 | peco| tr -d ' ')
+  if [ -n "$directory" ]; then
+    print -z "cd $directory"
+  fi
+}
