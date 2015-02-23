@@ -42,8 +42,10 @@ function pgco() {
 }
 
 function pcd() {
-  local directory=$(d |cut -f 2 | peco| tr -d ' ')
-  if [ -n "$directory" ]; then
-    print -z "cd $directory"
+  local directory_name=$(d |cut -f 2 | peco | tr -d ' ' |sed -e "s|~|${HOME}|")
+  if [ -n "$directory_name" ]; then
+    echo "cd to ${directory_name}"
+    cd $directory_name
   fi
 }
+
