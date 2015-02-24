@@ -49,3 +49,6 @@ function pcd() {
   fi
 }
 
+function pps() {
+  res=$(ps aux | peco | awk '{print $2}')
+}
