@@ -52,3 +52,10 @@ function pcd() {
 function pps() {
   res=$(ps aux | peco | awk '{print $2}')
 }
+
+function pssh() {
+  local res=$(grep "Host " ~/.ssh/config | cut -d \  -f 2 | peco)
+  if [ -n "$res" ]; then
+    ssh $res
+  fi
+}
