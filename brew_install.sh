@@ -38,6 +38,7 @@ bettertouchtool
 kobit
 evernote
 skype
+slack
 )
 
 for package in ${brew_packages[@]} ; do
