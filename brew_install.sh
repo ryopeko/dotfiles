@@ -2,8 +2,6 @@
 
 brew update
 
-brew tap peco/peco
-
 brew install vim --with-lua
 
 brew_packages=(
