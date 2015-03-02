@@ -6,6 +6,7 @@ bindkey -e
 export LANG=ja_JP.UTF-8
 
 export GOPATH=$HOME'/dev'
+export GOROOT=`go env GOROOT`
 
 export PATH=$PATH:/opt/local/bin:/opt/bin:$GOPATH/bin
 export PATH=/usr/local/git/bin:$PATH
