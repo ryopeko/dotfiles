@@ -52,6 +52,8 @@ endif
 
 call neobundle#end()
 
+set rtp+=$GOROOT/misc/vim
+
 set ambiwidth=double
 set autoindent
 set autoread
