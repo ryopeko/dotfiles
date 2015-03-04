@@ -53,6 +53,7 @@ endif
 call neobundle#end()
 
 set rtp+=$GOROOT/misc/vim
+set rtp+=.globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 
 set ambiwidth=double
 set autoindent
