@@ -40,10 +40,6 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'rking/ag.vim'
 
-syntax enable
-filetype indent on
-filetype plugin on
-
 if neobundle#exists_not_installed_bundles()
  echomsg 'Not installed bundles : ' .
        \ string(neobundle#get_not_installed_bundle_names())
@@ -52,8 +48,17 @@ endif
 
 call neobundle#end()
 
+filetype off
+filetype plugin indent off
+
 set rtp+=$GOROOT/misc/vim
 exec "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+
+syntax enable
+filetype plugin indent on
+filetype indent on
+filetype plugin on
+
 
 set ambiwidth=double
 set autoindent
@@ -104,6 +109,8 @@ au BufNewFile,BufRead *.psgi set nowrap tabstop=4 shiftwidth=4 expandtab
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
 colorscheme wombat256
+
+set completeopt=menu,preview
 
 """ neocomplete
 
@@ -221,6 +228,7 @@ au BufReadPost,BufNewFile *.watchr  :setl filetype=ruby
 au BufReadPost,BufNewFile *.t :setl filetype=perl
 au BufReadPost,BufNewFile *.tt :setl filetype=html
 au BufReadPost,BufNewFile *.psgi :setl filetype=perl
+au BufReadPost,BufNewFile *.go:setl filetype=go
 
 highlight WideSpace ctermbg=blue guibg=blue
 highlight EOLSpace ctermbg=red guibg=red
