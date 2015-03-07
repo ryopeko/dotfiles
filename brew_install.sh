@@ -18,6 +18,7 @@ wget
 tree
 redis
 imagemagick
+awscli
 )
 
 cask_packages=(
