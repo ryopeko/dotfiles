@@ -23,7 +23,7 @@ awscli
 
 cask_packages=(
 iterm2
-keyremap4macbook
+karabiner
 google-chrome
 google-japanese-ime
 chromium
