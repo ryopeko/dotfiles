@@ -20,6 +20,7 @@ redis
 imagemagick
 awscli
 hub
+lua
 )
 
 cask_packages=(
