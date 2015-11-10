@@ -19,6 +19,7 @@ tree
 redis
 imagemagick
 awscli
+hub
 )
 
 cask_packages=(
