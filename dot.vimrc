@@ -39,6 +39,7 @@ NeoBundle 'wombat256.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'c9s/perlomni.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'slim-template/vim-slim'
 
 if neobundle#exists_not_installed_bundles()
  echomsg 'Not installed bundles : ' .
