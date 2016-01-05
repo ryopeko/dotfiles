@@ -10,7 +10,7 @@ zle -N peco-src
 bindkey '^S' peco-src
 
 function peco-github-prs () {
-    local pr=$(repo=`g config remote.origin.url |cut -d ":" -f 2 |sed -e s/\.git$//` | curl -s -H "Authorization: token $TOKEN" $GITHUB_API_ENDPOINT/repos/$repo/pulls |jq -r '.[] |"\(.html_url)\t\(.title)\t\(.user.login)"' | peco --query "$LBUFFER"|cut -f 1)
+    local pr=$(repo=`g config remote.origin.url |sed -e "s/^.*[:\/]\(.*\/.*\).git$/\1/"` | curl -s -H "Authorization: token $TOKEN" $GITHUB_API_ENDPOINT/repos/$repo/pulls |jq -r '.[] |"\(.html_url)\t\(.title)\t\(.user.login)"' | peco --query "$LBUFFER"|cut -f 1)
     if [ -n "$pr" ]; then
         BUFFER="open ${pr}"
         zle accept-line
