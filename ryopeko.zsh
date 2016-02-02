@@ -87,3 +87,8 @@ propen() {
     git config --get remote.origin.url | sed -e "s/^.*[:\/]\(.*\/.*\).git$/https:\/\/github.com\/\1\//" | sed -e "s/$/pull\/${current_branch_name}/" | xargs open
 }
 
+ciopen() {
+  commit=$1
+  result=$(hub ci-status -v $commit)
+  open $(echo $result | awk '{print $2}')
+}
