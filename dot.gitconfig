@@ -1,6 +1,6 @@
 [user]
   name = ryopeko
-  email = ryopeko+free@gmail.com
+  email = ryopeko@gmail.com
 [color]
   ui = auto
 [alias]
@@ -23,3 +23,5 @@
 
 [ghq]
   root = ~/dev/src
+[pull]
+	ff = only
